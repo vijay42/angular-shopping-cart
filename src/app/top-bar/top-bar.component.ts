@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 
+
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
-export class TopBarComponent implements OnInit {
-itemCount=0;
+export class TopBarComponent implements OnInit{
+
+itemCount;
  constructor(
     private cartService: CartService
   ) {
-    this.itemCount = this.cartService.getItems().length;
+    
   }
 
   ngOnInit() {
+    this.itemCount = this.cartService.getItems().length;
   }
 
 }

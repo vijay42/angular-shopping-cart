@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { products } from '../products';
 import { CartService } from '../cart.service';
-import { Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +13,7 @@ import { Output, EventEmitter } from '@angular/core';
 export class ProductDetailsComponent implements OnInit {
 
   product;
- @Output() notifyCount = new EventEmitter();
+  
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService,
@@ -28,7 +28,6 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product1) {
     window.alert('Your product has been added to the cart!');
     this.cartService.addToCart(product1);
-    this.notifyCount.emit();
   }
 
 }
