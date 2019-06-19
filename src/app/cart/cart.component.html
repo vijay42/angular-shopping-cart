@@ -20,7 +20,11 @@
     <label>Address</label>
     <input type="text" formControlName="address">
   </div>
-
+<input class="full-width has-padding has-border" formControlName="PhoneNo" type="tel" placeholder="Mobile *" minlength="7"/>
+        <img src="/assets/img/required-img.png" class="required-img"
+          *ngIf="checkoutForm.get('PhoneNo').touched && checkoutForm.get('PhoneNo').errors?.required"
+          title="This fields is mandatory" data-toggle="tooltip" />
+          <label *ngIf="checkoutForm.get('PhoneNo').touched && checkoutForm.get('PhoneNo').errors?.minlength">Minimum 7 characters required</label>
   <button class="button" type="submit">Purchase</button>
   
 </form>
